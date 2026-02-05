@@ -1,0 +1,12 @@
+import string
+plain = string.ascii_uppercase
+cipher = "QWERTYUIOPASDFGHJKLZXCVBNM"
+mapping = {}
+for p, c in zip(plain, cipher):
+    mapping[p] = c
+    mapping[p.lower()] = c.lower()
+message = input("Enter the plaintext: ")
+result = ""
+for ch in message:
+    result += mapping.get(ch, ch)   # keep symbols/spaces same
+print("\nEncrypted Text:", result)
